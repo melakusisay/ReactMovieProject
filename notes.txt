@@ -1,0 +1,734 @@
+Cra is npm package to create react applications 
+
+command to create react app is 
+
+npx create-react-app appname
+
+
+we have opened this project in visual studio code 
+using open folder option 
+
+
+FIle Structure 
+
+
+node_modules -- is all the js pacakges required to run your project 
+
+any 3rd party package also u install it will also be installed in node_modules
+
+public is the static folder folder which contains all the static resources 
+
+static resources are the resources which can be accessed by  browser
+
+src folder cntains all your code or source code
+
+
+
+package.json is the main file for any js package or project be it angular node or vue js or any javascript
+
+package.json contains all the info about your project 
+
+what are scripts used what all are dependencies veriosn name description
+
+
+to start react project 
+
+npm start
+
+go inside project folder and execute 
+npm start
+
+
+a http server is created by react tool and it serves index.html on 3000 port number
+
+
+An application which consists of one body tag is known as single page application 
+
+All other views are rendered on requirement 
+
+without reloading the body the content is changed that is single page application
+
+React is used due to a concept known as virtual Dom
+DOM - Document Object model 
+
+all the html elements are converted into an object structure known as DOM which contains all the information about these html elements 
+likes =  740
+{likes}
+
+741
+
+we have increment number 
+but how would html comes to know that likes value is changed 
+
+it will compare the data what is displayed and hat is changed 
+
+so this comparision of the data like what is changed take time
+
+to make it easie reacted introduced virtual dom 
+
+virtual dom is the lighter representation of actual dom which is easy to compare or traverse
+
+if heavier dom with the lighter dom 
+
+comoaring actual with the virtual is faster compared to actual with actual 
+
+REact is faster to load the changes
+
+NOte -- change detection or data difference is easy to figure out 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Jsx -- react using jsx to achieve virtual dom-
+jsx - javascript xml it means when we write html like like structure in js file it is jsx 
+
+javascript extension becualse i feel reaact is extending js capabilities to understand html tags also 
+
+in jsx instead of class 
+we will be using className="btn btn-warning"
+
+all the components in react must be used with caps letter 
+
+lets u have create a button component 
+if u use <button></button>
+
+u must define ur components in caps 
+example <Button></Button>
+
+Rule 1) className
+Rule 2 caps letter for components 
+Rule 3) all the htmls tags in jsx must be closed 
+Rule 4) style must be used in object format 
+
+in normal html u may or may not close tags 
+<input>
+<br>
+<img>
+
+but while in using in jsx or react u must close these 
+
+<input  /> or <input></input>
+
+<a style="pointer:none">
+
+in react we use it like 
+
+style  = "height:100px;width:23px" -- Normal
+style={{height:"20px",width:"20px"}} -- JSX
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Ecmascript --- the specification of how to use javascript 
+
+to declare a variable we have somehing knwon as var 
+
+specifying the var is used to declare variables is ecmascript
+
+Es5 and es6 
+
+Es5 is understood by browsers es6 is partially understood 
+
+we convert es6 syntax into es5 and then send it to browsers 
+
+this process is known as transpilling 
+Babel js
+
+
+es 6 have some new features which were missing in es 5
+
+example 
+
+variable hoisiting -- 
+
+var name  is declration 
+name = "kyle" definition 
+
+
+js takes all the declarations to the topof the code 
+
+hoisitng 
+
+local are the things defined inside a function 
+
+but for is a block not a function 
+
+let is block variable 
+
+var is global/local depends on if u have declared a var inside a function it will be local
+
+to use anything in another files we have a keyword  knknown as export 
+
+one file can have one default export 
+
+import x from "./path"
+above line will go to that path and copy the efualt thing export in that x
+
+we must share project without node_modules 
+
+other person will install it using npm install 
+
+npm install will find out file package.json and install all the dependencies mentioned into that
+
+CRA to create this app 
+
+this cra converts all ur es 6 code into es 5 and then it send it to browsers 
+
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+Vd is in memory representation of Actual DOM 
+
+ReactDom in the body of index.html
+
+it insterts the ReactDom inside the body -- where 
+
+By default it inserts inside a div whose id is root -- how did we figure this out 
+
+
+Lets go to index.js
+
+
+React tool basically takes a component and inserts ReactDom along with that coponent inside document of you index.html
+
+Component which is getting rendered inside ReactDOM is known as Root Component
+
+what the heck is component ?
+
+Component is  nothing but just a view/html 
+
+in React How we define components 
+
+Step 1 we will create a file with component name
+Step 2 create a function and return a view/html from that
+Step 3 Export that function 
+Step 4 Whereever u want to use/display that component import it there and use it as a html tag  
+
+Static files/assets are stored in public folder 
+we will store our images into public folder
+
+
+When creating components it should be created in a manner that we pass the inputs and those inputs should be used for data 
+
+when passing the inputs to a component that process is known as passing the Props 
+
+
+Props are the inputs passed to a child component from parent component 
+
+App.js 
+
+in App component we are using Cake component App is parent of Cake 
+
+App will pass inputs to Cake component -- How ?
+
+<Cake x=10 y=20 z=30 />
+
+x y z are known as props 
+
+Functional 
+
+Class Based 
+
+Functional are stateless components 
+Classbased components are state full components
+
+State --? State is data of component at any point of time
+
+
+Functional components lack state  
+once they are rendered they cannot show anything updated
+
+For that we need statefull components / class based components 
+
+
+React became public in 2013
+
+2013 -2019 it was not possible 
+
+2019 they have introduced something using which we can update state using functional components  (React Hooks)
+
+
+components are used via html tags 
+
+so by just looking at the tag we can figure what type of component it is 
+
+Human lifecycle --  we take birth we enjoy life and we die  
+
+
+comes on the screen and leaves the screen
+
+constructor()
+
+render()
+
+componentDidMount()  -- rednering is succesfult 
+
+componentWillUnmount() -- just before leaving the screen 
+
+componentDidUpdate() -- when u call setState() didupdate gets called
+
+
+EVENT HANDLING IN REACT ---- 
+
+Javascript events are what ever user performs 
+click 
+copy
+change
+select
+cut 
+paste 
+
+events in react are used like 
+
+onEvent={mthodname}
+
+Note - I REPEAT DO NOT CALL THE METHOD ONLY PASS THE REFERENCE
+
+onChange={getValue()} -- Incorrect
+onChange = {getText}
+
+line 287 can be read react will call getText function on Change event 
+
+SUPERNOTE : Arrow functionals were created mainly to handle this operator
+
+
+this operator loses its value 
+
+arrwo functions are used to preseve the scope of this operator
+
+// to dispaly a list in React 
+
+we never know how many elements are there in an array 
+
+we will be repeating using map function 
+
+MAP operator 
+
+so first u need to figure out that what do u want to repeat 
+
+Cake 
+button
+input box 
+
+or a table row 
+that element u need to return from map function
+
+React routing 
+
+npm install react-router react-router-dom
+
+Routing is basically ur app checks for path entered into url bar 
+and loading the corresponding component inside the app is routing 
+
+
+what are routes 
+
+defining which component is going to appear on which path is knwon as route 
+
+
+React Fragments a wrapper to contain elements together without creating itslef in DOM
+
+being playng role of react developer 
+our only role is to take inputs from user like drop down checkobox radio buttons file buttons color calendar time 
+
+and send it backend and take the response and show it to user 
+
+what data what language it is build upon 
+
+for us (Frontend developer ) its just an api address 
+
+abc.com/apiendpoint
+
+123.4.43.3/api/endpointname 
+
+
+react is going to use either internal function of js known as fetch 
+
+alert()
+console.log()
+
+fetch()
+
+
+but we are going to use 3rd party library called axios 
+
+
+npm install axios 
+
+Api call comes with url+method and request JSON 
+
+we are searching flights from india to sigapore 
+
+Rest api mostly deal with json 
+
+
+JSON javascript object notation 
+
+var user = {
+    name:"Ashu Lekhi"
+}
+
+{"name":"Ashu Lekhi"}
+
+whenever we have to make an api call 
+
+we call a function 
+
+import axios from "axios"
+
+axios({
+    url:"api url"
+    method:"get"
+})
+
+axios({
+    url:"api url",
+    method:"get",
+    data:JSON
+})
+
+If we have to send any headers 
+axios({
+    url:"api url"
+    method:"get",
+    headers:{
+
+    }
+})
+
+we are in process to take birth 
+take birth 
+we get updated 
+and we die someday 
+
+component is constructed then it rendered once it is successfully rendered we can 
+
+it ismounted and when we update the state of cmponent we call componentDidUpdate()
+
+
+component is leavng screen it will unmount(
+
+)
+
+constructor()
+render()
+componentDidMount()
+componentDidUpdate()
+componentWillUnmount()
+
+/:id Here id is considered as route parameter 
+
+/abc
+/ashu-Lekhi
+/a74834384
+/345849354
+
+
+pass the data in ROutes ? 
+
+Route Params ?
+
+Route Query 
+
+/ashu is it a route 
+
+/ashu? question mark stands for route query 
+
+/ashu?doubt=componentdidmount
+
+doubt is the query variable and componentdid mount is the value for that query varibale  
+
+
+in react router 6 programatical navigation is only done using hooks 
+
+
+hooks cant be used by class based components
+
+
+it will locate package.json and install all the modules mentioned into dependencies 
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+What is state ?
+State is the data of component at a specific time ? right ?
+
+how many components 
+may be n 
+one component doesn't know about any other component 
+
+2 friends who had a fight using 3rd friend 
+
+Redux 
+due to its prinicipals 
+
+SST-- single source of truth all the data will stay in a single object referred as stor 
+Store is modified only by reducers 
+
+TCS 
+
+Software developer is allowed to access TCS portals ?
+
+functions 
+when some functions are given special privilaeges to modify the state of the store they are known as reducers 
+
+TCSIANS 
+TCSERS 
+
+
+Reducers 
+
+TCS -- ur id or ur employee id 
+
+function(state,action){
+
+}
+
+function AshuReducer(state={}, action)
+
+i am providing training 
+Action is nothing but just a plain js object which tell u what to do 
+
+example {type:"Develop a react app"}
+
+{type:"Do Asginment 2"}
+
+{type:"Npm install "}
+
+{type:"Buy Beer"}
+
+we will go to apple store we will make a request give me iphone 13 256gb black colour
+
+dispatch --- is a request we request an action 
+
+Component dispatches an action to the store. reducers on the store will listen to u and if ur request is suitable enough they will do the needful or they will simly ignore
+
+
+Store/state -- is a plain object it will hold all the application data
+
+reducers -- special functions to modify store 
+
+action -- plain objects which are dispatch
+
+
+.dispatch(ACTION)
+
+.getState()
+
+Redux -- is a 3rd party tool to manage state of your application
+
+i will let u by confirming it from edureka 
+
+i am binded to whom ? Edureka 
+
+Components with the Redux
+if redux changes component who was binded to it will also change automatically
+
+
+Scenario 
+Login 
+
+Navbar component 
+
+Navbar is not aware about happenings in Login Component 
+
+Login component will write the data in redux store 
+
+Navbar will watch that data from redux store 
+
+the moment store data changes navbar will be notified 
+
+
+redux is 3rd party standalone tool 
+standalone means it can work without react as well with any other thing 
+
+redux
+
+requirement is to connect redux with our react app 
+for that we will need react-redux
+
+npm i react-redux
+
+api call 
+
+result 
+
+dispatch the result to Redux
+
+props.dispatch({
+    type:"STORE_COURSES",
+    payload:response.data.courses
+})
+
+console.log("response.data)
+
+Will you work on a React Project ?
+
+Ashu will u work on a project --- i will say i will let you know
+you guys response to me 
+
+component was dispatching the action with data and reducers were storing it into store
+
+we will dispatch an action and network call will be made in redux and further it will store the data based on the outcome of api call
+
+I repeat -- api call i.e async task will now take place in Redux 
+
+For async operations in Redux we need middlewares
+
+
+A promise is a state returned by a function which says i will definitely come back with either YES or No 
+but i will be coming back 
+
+function Melaku(){
+    return new Promise((resolve,reject)=>{
+        if(tech=="React"){
+            resolve()
+        }
+        else{
+            reject()
+        }
+    })
+}
+
+Melaku()
+
+logging  middleware
+dispatch will write a console log with date and action type
+
+what is a function ?
+
+is a piece of code which takes values and return value
+
+a function can only return how many things ?
+
+1 - ONE 
+
+to return multiple values over time 
+
+we have special functions known as generators 
+
+function ashu (){
+    return "something"
+}
+
+function *rakshit(){
+
+}
+
+// u can pause execution and resume from their 
+
+
+What is redux-saga 
+
+Redux saga is  a middleware of redux 
+middleware -- one is u wrote that custom middle ware 
+
+3rd party middleware -- Redux-saga 
+
+npm install redux-saga 
+
+saga oofers u a benifit of linking different sagas with different actions 
+
+lets say 
+Watson for cake dispatches
+
+Micheal for cart dispatches
+
+Mahmoud for login dispatches
+
+Rajan for order dispatches
+
+Mathew  -- dealing with angular
+
+Sagas 
+we will write different sagas for different functions
+
+we can write specific middlewares for specific dispatches
+
+
+
+When we click on a cake 
+an action is dispatched 
+it is executed by saga middleware saga brings the details from api
+based on the response of api we update the store using reducers 
+
+store using map statetoprops function updates the component
+
+
+// this component is getting details from props and just displaying it
+
+
+// api call is handled by redux 
+
+// react says if u are using redux put all ur api calls in redux and make your component only displaying the data and not doing anythign else
+
+
+react launched in which year ? Fb released it in 2013 
+
+2019 only class based components had state 
+
+functional component and it needed state there was only one way to write a class based component for that 
+
+
+Hooks 
+
+What is hooks -- Hooks are functions 
+What are react hooks ? They are functions simple enough 
+
+our 1st react hook 
+useState() is one of react hooks that provide state to a stateless component
+
+this.state = {
+    count:0
+}
+
+this.setState({
+    count:this.state.count++
+})
+
+var [property,propertyhandlerfunction] =  useState(initialvalue)
+var [count,setCount] =  useState(0)
+setCount(count++)
+
+functions in order to execute they don't create objects 
+classes do create 
+
+1st hook - useState()
+2nd hook - useEffect() is a hook which is called when a component is rendered and updated 
+
+
+useEffect is called first time and everytime state updates 
+
+useEffect to be called only for first time not on any change
+
+
+
+useEffect(()=>{}) first time and on every update
+
+useEffect(()=>{},[]) epmty array is known of list of dependencies only first time not on any update 
+
+useEffect(()=>{},[count,mahmoud]) list of dependencies has mentioned count that means it will be called if the value of count will be changed
+
+useNavigate() is a hook provided by react-router-dom 
+
+Rules of Hooks
+Hooks cant be used with classbased components 
+
+
+useContext()
+
+Context is using what a parent can pass data to n level of child 
+
+level 1 parent can pass data to 7th level child
+
+
+
+
+
+
+
+
+
+
+
+
+
